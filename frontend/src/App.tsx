@@ -189,32 +189,32 @@ function App() {
   }, [])
 
   const fetchSystemStatus = () => {
-    axios.get('http://127.0.0.1:8000/')
+    axios.get('https://dashboard.render.com/')
       .then((res) => setBackendStatus(res.data.status.toUpperCase()))
       .catch(() => setBackendStatus("OFFLINE"))
   }
 
   const fetchTelemetry = () => {
-    axios.get('http://127.0.0.1:8000/api/v1/system/metrics')
+    axios.get('https://dashboard.render.com/api/v1/system/metrics')
       .then((res) => setTelemetry(res.data))
       .catch(() => setTelemetry({ cpu_load: 0, memory_usage: 0, network_latency: "ERR" }))
   }
 
   const refreshDataPool = async () => {
     try {
-      const studentRes = await axios.get('http://127.0.0.1:8000/api/v1/students')
+      const studentRes = await axios.get('https://dashboard.render.com/api/v1/students')
       setStudents(studentRes.data)
-      const courseRes = await axios.get('http://127.0.0.1:8000/api/v1/courses')
+      const courseRes = await axios.get('https://dashboard.render.com/api/v1/courses')
       setCourses(courseRes.data)
-      const attRes = await axios.get('http://127.0.0.1:8000/api/v1/attendance')
+      const attRes = await axios.get('https://dashboard.render.com/api/v1/attendance')
       setAttendance(attRes.data)
-      const noticeRes = await axios.get('http://127.0.0.1:8000/api/v1/notices')
+      const noticeRes = await axios.get('https://dashboard.render.com//api/v1/notices')
       setNotices(noticeRes.data)
-      const nodeRes = await axios.get('http://127.0.0.1:8000/api/v1/map-nodes')
+      const nodeRes = await axios.get('https://dashboard.render.com//api/v1/map-nodes')
       setMapNodes(nodeRes.data)
-      const facRes = await axios.get('http://127.0.0.1:8000/api/v1/faculty')
+      const facRes = await axios.get('https://dashboard.render.com//api/v1/faculty')
       setFaculty(facRes.data)
-      const gradeRes = await axios.get('http://127.0.0.1:8000/api/v1/grades')
+      const gradeRes = await axios.get('https://dashboard.render.com//api/v1/grades')
       setGrades(gradeRes.data)
     } catch (err) { console.error("Data refresh pipeline error: ", err) }
   }
