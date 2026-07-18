@@ -14,8 +14,6 @@ Database: PostgreSQL Relational Database.
 AI Engine: Gemini (gemma-4-26b-a4b-it model via Google GenAI SDK).
 PDF Processing: pypdf.
 📂 Project Directory Structure
-text
-
 campusos-workspace/
 ├── backend/                  # FastAPI Python Backend
 │   ├── database.py           # PostgreSQL database connection setup
@@ -37,7 +35,7 @@ campusos-workspace/
     └── Files/                # Data storage directory
         ├── S2 G 2025.pdf     # Student class list
         └── cec_spatial_map_and_directory.pdf # Floor map schemas
-💻 Local Development Setup
+        💻 Local Development Setup
 1. Prerequisites
 Ensure you have the following installed locally:
 
@@ -47,52 +45,34 @@ PostgreSQL Database
 2. Database Setup
 Create a local database named campusos_db in PostgreSQL.
 Ensure you have the database username and password ready. The default connection URL is configured in backend/database.py:
-python
-
 DATABASE_URL = "postgresql://postgres:27062006@localhost:5432/campusos_db"
-(Update the credentials in database.py to match your local setup if necessary).
 3. Backend Setup
-Open your terminal and navigate to the backend/ directory:
-bash
-
+Open your terminal and navigate to the backend/ director
 cd backend
-Create and activate a Python virtual environment:
-powershell
-
+Create and activate a Python virtual environmen
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 Install the required Python packages:
-bash
-
 pip install -r requirements.txt
 Set your Google Gemini API key as an environment variable:
-powershell
-
 # Windows PowerShell
 $env:GEMINI_API_KEY="your-gemini-api-key-here"
-Run the database seeder to parse the roster PDF and populate the tables:
-bash
-
+Run the database seeder to parse the roster PDF and populate the tables
 python seed_from_pdf.py
 Start the FastAPI development server:
-bash
-
 uvicorn main:app --reload --port 8000
 The backend will be running at http://127.0.0.1:8000.
 4. Frontend Setup
 Open a new terminal window and navigate to the frontend/ directory:
-bash
-
 cd frontend
-Install npm dependencies:
-bash
-
+Install npm dependencies
 npm install
-Launch the Vite development server:
-bash
-
+Launch the Vite development server
 npm run dev
 Access the dashboard in your browser at http://localhost:5173.
+
+
+
 🌐 Production Cloud Deployment Guide
 To deploy the entire full-stack application online:
 
