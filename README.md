@@ -1,9 +1,3 @@
-Click here for live deployment link campusos-workspace.vercel.app
-
-
-
-
-
 
 CampusOS: Faculty Administration & Student Analytics Dashboard
 CampusOS is a clean, bright, and professional academic administration portal designed for university department heads, professors, and academic advisors. The system replaces fragmented spreadsheets and flat PDF rosters with a unified full-stack application supporting student directories, grading registers, notice boards, interactive 2D geospatial campus maps, and Gemini-based performance analytics.
